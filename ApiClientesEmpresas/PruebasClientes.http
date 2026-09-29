@@ -1,0 +1,54 @@
+@ApiUrl = http://localhost:5080
+@ClienteId = 1
+
+### Consultar un cliente por su identificador
+GET {{ApiUrl}}/api/clientes/{{ClienteId}}
+Accept: application/json
+
+### Modificar el cliente
+PUT {{ApiUrl}}/api/clientes/{{ClienteId}}
+Content-Type: application/json
+
+{
+  "nombre": "Ana Maria",
+  "apellido": "Benitez",
+  "email": "ana.maria@example.com",
+  "telefono": "0982000001"
+}
+
+### Consultar los datos modificados
+GET {{ApiUrl}}/api/clientes/{{ClienteId}}
+Accept: application/json
+
+### Intentar registrar un nombre vacío
+POST {{ApiUrl}}/api/clientes
+Content-Type: application/json
+
+{
+  "nombre": "",
+  "apellido": "Prueba",
+  "email": "validacion@example.com",
+  "telefono": null
+}
+
+### Intentar registrar un correo inválido
+POST {{ApiUrl}}/api/clientes
+Content-Type: application/json
+
+{
+  "nombre": "Cliente",
+  "apellido": "Prueba",
+  "email": "correo-invalido",
+  "telefono": null
+}
+
+### Comprobar la validación del identificador en el Service
+GET {{ApiUrl}}/api/clientes/0
+Accept: application/json
+
+### Eliminar el cliente de prueba
+DELETE {{ApiUrl}}/api/clientes/{{ClienteId}}
+
+### Consultar el cliente después de eliminarlo
+GET {{ApiUrl}}/api/clientes/{{ClienteId}}
+Accept: application/json

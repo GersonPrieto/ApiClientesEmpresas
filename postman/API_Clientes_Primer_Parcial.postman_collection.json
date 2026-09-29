@@ -1,0 +1,232 @@
+{
+  "info": {
+    "_postman_id": "ff76d93a-6e91-4620-b6d2-0f246e54166a",
+    "name": "API Clientes - Primer Parcial",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58497559",
+    "_collection_link": "https://go.postman.co/collection/58497559-ff76d93a-6e91-4620-b6d2-0f246e54166a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Registrar cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Liliam\",\r\n  \"apellido\": \"Franco\",\r\n  \"email\": \"liliam.franco@gmail.com\",\r\n  \"telefono\": \"0981999999\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Listar clientes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Consultar cliente por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5080/api/clientes/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Modificar cliente",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Lilian\",\r\n  \"apellido\": \"Franco\",\r\n  \"email\": \"lilian.franco@gmail.com\",\r\n  \"telefono\": \"0982000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5080/api/clientes/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Validar nombre obligatorio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"\",\r\n  \"apellido\": \"Acosta\",\r\n  \"email\": \"lucia.acosta@example.com\",\r\n  \"telefono\": \"0983000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 - Validar correo electrónico",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Lucia\",\r\n  \"apellido\": \"Acosta\",\r\n  \"email\": \"correo-invalido\",\r\n  \"telefono\": \"0983000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5080/api/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 - Validar identificador",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5080/api/clientes/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11 - Eliminar cliente",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5080/api/clientes/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12 - Consultar cliente eliminado",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5080/api/clientes/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5080",
+          "path": [
+            "api",
+            "clientes",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
